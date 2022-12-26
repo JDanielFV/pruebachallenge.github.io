@@ -1,21 +1,17 @@
-function encriptar (){
-    var texto = document.querySelector("#input-texto").value;
-    var textoCifrado = texto.replace(/e/gi, "enter").replace(/i/gi, "imes").replace(/a/gi, "ai").replace(/o/gi, "ober").replace(/u/gi, "ufat");
-    document.querySelector(".text-input-salida").value = textoCifrado;
-    document.querySelector("#input-texto").value;
+// Encriptar texto
+function encrypt(text) {
+    return btoa(text);
+  }
 
-}
+  var texto = 
+  
+  // Desencriptar texto
+  function decrypt(text) {
+    return atob(text);
+  }
 
-var botonEncriptar = document.querySelector("#btn-encriptar");
-botonEncriptar.onclick = encriptar;
+  // Obtén el texto a encriptar del elemento <textarea> con id="entrada"
+  let text = document.getElementById("entrada").value;
 
-function desencriptar (){
-    var texto = document.querySelector("#input-texto").value;
-    var textoCifrado = texto.replace(/enter/gi, "e").replace(/imes/gi, "i").replace(/ai/gi, "a").replace(/ober/gi, "o").replace(/ufat/gi, "u");
-    document.querySelector(".text-input-salida").value = textoCifrado;
-    document.querySelector("#input-texto").value;
-
-}
-
-var botonDesencriptar = document.querySelector("#btn-desencriptar");
-botonDesencriptar.onclick = desencriptar;
+  // Llamar a la función de encriptación con el texto como argumento y asignar el resultado a la propiedad value del elemento <textarea> con id="salida"
+  document.getElementById("salida").value = encrypt(text);
