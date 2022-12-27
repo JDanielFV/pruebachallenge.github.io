@@ -32,37 +32,37 @@ html{
 
 #textoEntrada{
     position: absolute;
-width: 185px;
-height: 56px;
-left: 350px;
-top: 180px;
+    width: 185px;
+    height: 56px;
+    left: 350px;
+    top: 180px;
 
-font-family: Helvetica;
-font-style: normal;
-font-weight: 500;
-font-size: 40px;
-line-height: 49px;
-text-align: center;
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 49px;
+    text-align: center;
 
-color: #FFFFFF;
-}
+    color: #FFFFFF;
+    }
 
 #textoSalida{
     position: absolute;
-width: 185px;
-height: 56px;
-left: 744px;
-top: 180px;
+    width: 185px;
+    height: 56px;
+    left: 744px;
+    top: 180px;
 
-font-family: Helvetica;
-font-style: normal;
-font-weight: 500;
-font-size: 40px;
-line-height: 49px;
-text-align: center;
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 49px;
+    text-align: center;
 
-color: #FFFFFF;
-}
+    color: #FFFFFF;
+    }
 
 #entrada{
     position: absolute;
