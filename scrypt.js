@@ -1,3 +1,11 @@
+function encrypt(text) {
+  return btoa(text);
+}
+
+function decrypt(text) {
+  return atob(text);
+}
+
 document.getElementById("botonEncriptar").onclick = function() {
     let entrada = document.getElementById("textoEntrada").value;
     let salida = document.getElementById("textoSalida");
@@ -10,13 +18,5 @@ document.getElementById("botonEncriptar").onclick = function() {
     let salida = document.getElementById("textoSalida");
   
     salida.value = decrypt("entrada");
-  }
-  
-  function encrypt(text) {
-    return btoa(text);
-  }
-  
-  function decrypt(text) {
-    return atob(text);
   }
   
