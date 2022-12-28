@@ -7,15 +7,15 @@ function decrypt(text) {
 }
 
 document.getElementById("botonEncriptar").onclick = function() {
-    let input = document.getElementById("entrada").value;
-    let output = document.getElementById("salida");
+    let input = document.getElementById(entrada).value;
+    let output = document.getElementById(salida);
   
-    output.value = encrypt("entrada");
+    output.value = encrypt(entrada);
   }
   
-  document.getElementById("botonDesencriptar").onclick = function() {
-    let input = document.getElementById("entrada").value;
-    let output = document.getElementById("salida");
+  document.getElementById(botonDesencriptar).onclick = function() {
+    let input = document.getElementById(entrada).value;
+    let output = document.getElementById(salida);
   
-    output.value = decrypt("entrada");
+    output.value = decrypt(entrada);
   } 
