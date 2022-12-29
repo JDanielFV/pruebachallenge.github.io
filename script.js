@@ -6,7 +6,7 @@ function decrypt(text) {
   return atob(text);
 }
 
-document.getElementById("botonEncriptar").onclick = function() {
+document.getElementById(botonEncriptar).onclick = function() {
     let input = document.getElementById(entrada).value;
     let output = document.getElementById(salida);
   
