@@ -43,8 +43,14 @@ function escribirTexto(texto){
 
 function copiarTexto (){
     var contenido = document.getElementById("textoSalida");
-    contenido.select();
-    document.execCommand('copy');
+    /*contenido.select();
+    document.execCommand('copy');*/
+
+    navigator.clipboard.writeText(contenido.value).then(function() {
+        // la operación de copiar ha sido exitosa
+      }, function(err) {
+        // la operación de copiar ha fallado
+      });
 }
 
 function encriptarTexto(texto){
