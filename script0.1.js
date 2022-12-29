@@ -4,7 +4,7 @@
 //La letra "o" es convertida para "ober"
 //La letra "u" es convertida para "ufat"
 
-var botonEncriptar = document.querySelector("#Encriptar");
+var botonEncriptar = document.querySelector("#encriptar");
 botonEncriptar.addEventListener("click",function(event){
     event.preventDefault();
     var textoEncriptado = encriptarTexto(leerTextoArea());
@@ -12,7 +12,7 @@ botonEncriptar.addEventListener("click",function(event){
 
 });
 
-var botonDesencriptar = document.querySelector("#Desencriptar");
+var botonDesencriptar = document.querySelector("#desencriptar");
 botonDesencriptar.addEventListener("click",function(event){
     event.preventDefault();
     var textoDesencriptado = desencriptarTexto(leerTextoArea());
@@ -21,7 +21,7 @@ botonDesencriptar.addEventListener("click",function(event){
 
 
 
-var botonCopiar = document.querySelector("#Copiar");
+var botonCopiar = document.querySelector("#copiar");
 botonCopiar.addEventListener("click",function(event){
     event.preventDefault();
     copiarTexto();
