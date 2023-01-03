@@ -6,19 +6,35 @@
         <title>Encriptador</title>
         <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="style.css">
-        <script src="script0.1.js"></script>
+        <script src="script.js"></script>
     </head>
     <body>
         <header>
-            <h1>Encriptador</h1>
+            <div class="cabecera">
+                <h1>Encriptador</h1>
+            </div>
         </header>
-        <main>
-            <ul>
-                <li><a></a></li>
-            </ul>
-        </main>
+            <main>
+                <div id="fondo">
+                    <ul class="caja">
+                        <li>
+                            <h2>Ingrese su texto:</h2>
+                            <input type="text" class="caja-de-texto" id="input">
+                            <input type="button" value="Encriptar" class="boton" id="boton-encriptar">
+                            <input type="button" value="Desencriptar" class="boton" id="boton-desencriptar">
+                        </li>
+                    </ul>            
+                    <ul class="caja">
+                        <li>
+                            <h2>Resultado</h2>
+                            <input type="text" class="caja-de-texto" id="output">
+                            <input type="button" value="Copiar" class="boton" id="boton-copiar">
+                        </li>
+                    </ul>
+                </div>
+            </main>
         <footer>
-
+            <p>J. Daniel Flores Vega - 2023</p>
         </footer>
     </body>
 </html>
