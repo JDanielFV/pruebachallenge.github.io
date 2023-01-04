@@ -1,5 +1,9 @@
+html{
+    scroll-behavior: smooth;
+}
+
 .cabecera{
-    background: #29355C;
+    background:#29355C;
     padding: 20px 0;
     width: 100%;
     margin: 0 auto;
@@ -10,18 +14,20 @@
 }
 
 main{
-    background-color: #29355C;
+    background:linear-gradient(#29355C,#626591);
     color: white;
     height: 750px;
 }
 
 #fondo{
     background-color: #626591;
+    filter: drop-shadow(50px);
     border-radius: 30px;
     width: 80%;
     height: 65%;
     display:inline-block;
     margin: 0 10%;
+    filter: blur();
 }
 
 .caja{
@@ -29,7 +35,7 @@ main{
     text-align: center;
     width: 35%;
     vertical-align: top;
-    margin: 9% 7%;
+    margin: 6% 7%;
     box-sizing: border-box;
     border-radius: 20px;
     font-family: helvetica;
@@ -43,28 +49,37 @@ main{
     font-family: helvetica;
     height: 216px;
     width: 280px;
-    margin: 10px auto;
+    margin: 5px auto;
 }
 
-.boton{
-    background-color: #3C3AC6;
-    border-color: #3C3AC6;
-    border-radius: 10px;
-    color: white;
+.btn{
+    border-radius: 25px;
     text-align: center;
     font-family: helvetica;
-    font-size: 20px;
+    font-size: 18px;
     width: 120px;
     height: 50px;
-    padding: 0 0;
-    margin: 0 auto;
+    margin: 10px auto;
+    background: #29355C;
+    color: #ffffff;
+
+}
+.btn:hover{
+    color: #626591;
+    background: #ffffff;
+
+}
+
+.btn:active{
+    color: #FFFFFF;
+    background: #787fe2;
 }
 
 footer{
-    background-color: #29355C;
     font-size: 30px;
     font-family: helvetica;
     text-align: center;
     color: white;
-    padding: 20px;
+    padding: 5px;
+background: #626591;
 }

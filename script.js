@@ -1,105 +1,139 @@
-var vocales = ["a","e","i","o","u"];
-var encriptacion = ["ai","enter","imes","ober","ufat"]
-var espacios = [1,4,3,3,3]
-var mencriptado = [];
-var mdesencriptado = [];
-var espacio = "";
-var texto = document.querySelector(".palabra");
-//const re=/[A-Z|!#$%&/()=?+¡¿~*-_.,;:]/g;
-const re = /[^a-z ]/g;
+var form = document.getElementById("forms");
+const vowels = ["e", "i", "a", "o", "u"];
+const vowelsKeys = ["enter", "imes", "ai", "ober", "ufat"]
 
-function dividirCadena(cadenaADividir,separador) {
-    
-    const resultEncriptar = cadenaADividir.value.match(re);
-    
-    if(resultEncriptar == null){
+//We reset the form when reload the page.
+document.body.onload = function () {
+    form.reset();
+}
 
-    
-        mencriptado = [];
-        var arrayDeCadenas = cadenaADividir.value.split(separador);
-    
-        for (var i=0; i < arrayDeCadenas.length; i++) {
-            for (var j=0; j< vocales.length; j++){
-                if(arrayDeCadenas[i] == vocales[j]){
-                    mencriptado[i] = encriptacion[j];
-                    break;
-                }
-                else{
-                    mencriptado[i] = arrayDeCadenas[i];
-                }
-            }
-        
-        
-        }
-    
-        var finalEncriptado = "";
-        for (var i=0; i < arrayDeCadenas.length; i++){
-            finalEncriptado = finalEncriptado + mencriptado[i];
-        }
-        if(finalEncriptado != ""){
-            document.getElementById("output").innerHTML = finalEncriptado;
-            document.getElementById("boton-copiar").style.visibility="visible";
-            cadenaADividir.value="";
-        }
-    }else{
-        alert("No puede ingresar mayúsculas y caracteres especiales");  
+//Valid that message has 140 number of characters
+function messageValidator(msg) {
+    if (msg.length <= 250) {
+        return true
+    } else {
+        return false
     }
-      
-    
 }
 
-function leerencriptado(){
-    dividirCadena(texto,espacio);
+//replace letters in a word, the letter to be replaced, the value to be replaced and the word where it will be replaced are sent.
+function replaceLetters(bfLetter, atLetter, word) {
+    let re = new RegExp(bfLetter, 'g');
+    let newWord = word.replace(re, atLetter);
+    return newWord;
 }
 
-function desencriptar(mensaje,separacion){
-    mdesencriptado = [];
-    const resultDesencriptar = mensaje.value.match(re);
-    if (resultDesencriptar == null){
+//Find the vowels in the word and apply the key corresponding tho the vowel
+function encryptWord(word) {
+    let newWord = "";
+    let letterMatch = "";
 
-    
-        var vectorEncriptado = mensaje.value.split(separacion);
-        for (var i=0; i < vectorEncriptado.length; i++){
-            for (var j=0; j < vocales.length; j++){
-                if(vectorEncriptado[i] == vocales[j]){
-                    mdesencriptado[i] = vocales[j];
-                    i = i+espacios[j];
-                    break;
-                }
-                else{
-                    mdesencriptado[i] = vectorEncriptado[i];
-                }
+    for (letter of word) {
+
+        for (let i = 0; i < vowels.length; i++) {
+
+            const element = vowels[i];
+            const elementKey = vowelsKeys[i];
+
+            if (letter == element) {
+                letterMatch = replaceLetters(element, elementKey, letter);
+                break;
+            } else {
+                letterMatch = letter;
             }
-        
+
         }
 
-        var finalDesencriptado = "";
-        for (var i=0; i < vectorEncriptado.length; i++){
-            if(mdesencriptado[i]!=undefined){
-                finalDesencriptado = finalDesencriptado + mdesencriptado[i];
-            
+        newWord += letterMatch;
+    }
+    return newWord;
+
+}
+
+//Search for matches between keys and a word, then returns the decrypted word.
+function decryptWord(word) {
+    let newWord = word;
+
+    for (let i = 0; i < vowelsKeys.length; i++) {
+
+        const vKey = vowelsKeys[i];
+        const vowel = vowels[i];
+        const re = new RegExp(vKey, 'g');
+        let letterMatch = newWord.match(re);
+
+        if (letterMatch != null) {
+            newWord = replaceLetters(vKey, vowel, newWord);
+        }
+
+    }
+
+    return newWord;
+}
+
+//Gets the reference of the buttons with class .btn
+const buttons = document.querySelectorAll(".btn");
+
+//With this variable e control the actions of the application
+var selectedOption;
+
+//We ho through the buttons
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        console.log("El texto que tiene es: ",);
+        selectedOption = button.innerText;
+    })
+});
+
+//Functionality to copy text and send it to the clipboard
+function copyText(element) {
+    navigator.clipboard.writeText(element)
+    .then(() => {
+        alert('Texto copiado!');
+    })
+    .catch(() => {
+        alert('No se puede copiar el texto!',err);
+    })
+}
+
+//Trigger for button copy
+function btnCopy() {
+    let element = document.getElementById('msgResult').value;
+    copyText(element);
+}
+
+//Sends the resulting message to the DOM
+function messageResult(message) {
+    let encryptMessage = "";
+    encryptMessage = message.toString().replace(/,/g, " ");
+    console.log(encryptMessage);
+    document.getElementById('message-result').innerHTML = `<div class="message-result">
+    <textarea id="msgResult" cols="1" rows="5" maxlength="140" readonly>${encryptMessage}</textarea>
+    <button type="submit" onclick="btnCopy()" class="btn btn-copy">Copiar</button>
+    </div>
+    `;
+}
+
+
+//Application trigger
+form.onsubmit = function (e) {
+    e.preventDefault();
+    let message = document.getElementById("input-message").value;
+    const wordArray = message.toLowerCase().split(" ");
+
+    if (messageValidator) {
+
+        let resultArray = [];
+        for (word of wordArray) {
+
+            if (selectedOption == "Encriptar") {
+                resultArray.push(encryptWord(word));
             }
-        
-        }
-        if(finalDesencriptado != ""){
-            document.getElementById("output").innerHTML = finalDesencriptado;
-            document.getElementById("boton-copiar").style.visibility="visible";
-            mensaje.value="";
-        }
-    }else{
-        alert("No puede ingresar mayúsculas y caracteres especiales")
-    }    
-}
 
-function leerdesencriptado(){
-    desencriptar(texto,espacio);
-}
+            if (selectedOption == "Desencriptar") {
+                resultArray.push(decryptWord(word));
+            }
+            messageResult(resultArray);
+        }
 
-function copiarAlPortapapeles(id_elemento) {
-    var aux = document.createElement("input");
-    aux.setAttribute("value", document.getElementById(id_elemento).innerHTML);
-    document.body.appendChild(aux);
-    aux.select();
-    document.execCommand("copy");
-    document.body.removeChild(aux);
+    }
 }
