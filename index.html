@@ -9,7 +9,6 @@
         <link rel="stylesheet" href="reset.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
     </head>
     <body>
         <header>
@@ -17,27 +16,32 @@
                 <h1>Encriptador</h1>
             </div>
         </header>
-            <main>
-                <div id="fondo">
-                    <ul class="cajaEntrada">
-                        <li>
-                            <h2>Ingrese su texto:</h2>
-                            <textarea class="form-control" id="textoEntrada" placeholder="Recuerda no usar caracteres especiales ni mayusculas" cols="30" rows="10" required></textarea>
-                            <button type="submit" value="Encriptar" class="btn" id="botonEncriptar">Encriptar</button>
-                            <button type="submit" value="Desencriptar" class="btn" id="botonDesencriptar">Desencriptar</button>
-                        </li>
-                    </ul>            
-                    <ul class="cajaResultado">
-                        <li>
-                            <h2>Resultado</h2>
-                            <textarea class="form-control" id="textoSalida" cols="30" rows="10" readonly></textarea>
-                            <input type="button" value="Copiar" class="btn" id="botonCopiar">
-                        </li>
-                    </ul>
-                </div>
-            </main>
+        <main>
+            <div id="fondo">
+                <ul class="cajaEntrada">
+                    <li>
+                        <h2>Ingrese su texto:</h2>
+                        <textarea class="form-control" id="textoEntrada" placeholder="Recuerda no usar caracteres especiales ni mayusculas" cols="30" rows="10" required></textarea>
+                        <button type="submit" value="Encriptar" class="btn" id="botonEncriptar">Encriptar</button>
+                        <button type="submit" value="Desencriptar" class="btn" id="botonDesencriptar">Desencriptar</button>
+                    </li>
+                </ul>            
+                <ul class="cajaResultado">
+                    <li>
+                        <h2>Resultado</h2>
+                        <textarea class="form-control" id="textoSalida" cols="30" rows="10" ></textarea>
+                        <input type="button" value="Copiar" class="btn" id="botonCopiar">
+                    </li>
+                </ul>
+            </div>
+        </main>
+        <script src="script.js"></script>
+        <script type="text/javascript">
+            let textoEntrada=document.getElementById("textoEntrada").value;
+            console.log( textoEntrada);
+        </script>
         <footer>
             <p>J. Daniel Flores Vega - 2023</p>
         </footer>
     </body>
-</html>
+    </html>

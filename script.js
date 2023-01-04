@@ -4,11 +4,11 @@ botonEncriptar.addEventListener("submit",validando);
 
 //agregando evento al boton desencriptar
 const botonDesencriptar =document.querySelector("#botonDesencriptar");
-botonDesencriptar.addEventListener("click",validando2);
+botonDesencriptar.addEventListener("submit",validando2);
 
 //agregando evento al boton copiar
 const botonCopiar =document.querySelector("#botonCopiar");
-botonCopiar.addEventListener("click",copytext);
+botonCopiar.addEventListener("submit",copytext);
 
 
 let i ; //indice para recorrer vector reglas

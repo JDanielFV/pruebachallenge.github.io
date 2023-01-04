@@ -26,6 +26,7 @@ main{
     height: 65%;
     display:inline-block;
     margin: 0 10%;
+    box-shadow: #000000;
 }
 
 .cajaEntrada, .cajaResultado{
