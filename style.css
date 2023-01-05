@@ -30,7 +30,7 @@ body {
     animation: 5s movement linear infinite;
 }
 
-@keyframes movement {
+/*@keyframes movement {
     0%, 100% {
       background-size: 
         130vmax 130vmax,
@@ -87,7 +87,7 @@ body {
         -10vmax 10vmax,
         40vmax 60vmax;
     }
-}
+}*/
 
 .cabecera{
     padding: 20px 0;
