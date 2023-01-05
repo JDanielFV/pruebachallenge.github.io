@@ -20,8 +20,9 @@ function Encriptar(){
 }
 
 function Desencriptar(){
-    var mensajeEncriptado = inputMensaje.value;
-    var mensaje = mensajeEncriptado
+
+    var mensaje = inputMensaje.value;
+    var mensajeEncriptado = mensaje
 
     .replaceAll("enter","e")
     .replaceAll("imes","i")
@@ -31,10 +32,17 @@ function Desencriptar(){
     inputResultado.value = mensajeEncriptado;
 }
 
-function copiar(){
-    navigator.clipboard.writeText(inputMensaje)
+/*function copiar(){
+    var texto = document.getElementById("#textoSalida")
+    navigator.clipboard.writeText(texto)
     alert("copiado")
-}
+}*/
+
+function copiar(t){
+    t.preventDefault()
+    let content = document.getElementById('textoSalida');
+        content.select();
+        let successful = document.execCommand('copy');}
 
 btnEncriptar.onclick = Encriptar;
 btnDesencriptar.onclick = Desencriptar;
