@@ -31,22 +31,11 @@ function Desencriptar(){
     inputResultado.value = mensajeEncriptado;
 }
 
-/*function copiar(){
-    await navigator.clipboard.writeText("textoSalida");
-    console.log('contenido copiado')
-}*/
-
 function copiar(){
-    let text = document.querySelector("#textoSalida").innerHTML;
-    const copyContent = async () => {
-    try {
-        await navigator.clipboard.writeText(text);
-        console.log('Content copied to clipboard');
-    } catch (err) {
-        console.error('Failed to copy: ', err);
-    }
-    }
+    navigator.clipboard.writeText(inputMensaje)
+    alert("copiado")
 }
+
 btnEncriptar.onclick = Encriptar;
 btnDesencriptar.onclick = Desencriptar;
 btnCopiar.onclick = copiar;
