@@ -1,33 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
 html{
     scroll-behavior: smooth;
 }
 
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #e493d0;
+    background-image: 
+      radial-gradient(closest-side, rgba(78, 235, 180, 1), rgba(78, 235, 180, 0)),
+      radial-gradient(closest-side, rgba(248, 139, 211, 1), rgba(248, 139, 211, 0)),
+      radial-gradient(closest-side, rgba(188, 160, 216, 1), rgba(188, 160, 216, 0)),
+      radial-gradient(closest-side, rgba(170, 142, 245, 1), rgba(170, 142, 245, 0)),
+      radial-gradient(closest-side, rgba(52, 207, 235, 1), rgba(52, 207, 235, 0));
+    background-size: 
+      130vmax 130vmax,
+      80vmax 80vmax,
+      90vmax 90vmax,
+      110vmax 110vmax,
+      90vmax 90vmax;
+    background-position:
+      -80vmax -80vmax,
+      60vmax -30vmax,
+      10vmax 10vmax,
+      -30vmax -10vmax,
+      50vmax 50vmax;
+    background-repeat: no-repeat;
+    animation: 5s movement linear infinite;
+}
+
+@keyframes movement {
+    0%, 100% {
+      background-size: 
+        130vmax 130vmax,
+        80vmax 80vmax,
+        90vmax 90vmax,
+        110vmax 110vmax,
+        90vmax 90vmax;
+      background-position:
+        -80vmax -80vmax,
+        60vmax -30vmax,
+        10vmax 10vmax,
+        -30vmax -10vmax,
+        50vmax 50vmax;
+    }
+    25% {
+      background-size: 
+        100vmax 100vmax,
+        90vmax 90vmax,
+        100vmax 100vmax,
+        90vmax 90vmax,
+        60vmax 60vmax;
+      background-position:
+        -60vmax -90vmax,
+        50vmax -40vmax,
+        0vmax -20vmax,
+        -40vmax -20vmax,
+        40vmax 60vmax;
+    }
+    50% {
+      background-size: 
+        80vmax 80vmax,
+        110vmax 110vmax,
+        80vmax 80vmax,
+        60vmax 60vmax,
+        80vmax 80vmax;
+      background-position:
+        -50vmax -70vmax,
+        40vmax -30vmax,
+        10vmax 0vmax,
+        20vmax 10vmax,
+        30vmax 70vmax;
+    }
+    75% {
+      background-size: 
+        90vmax 90vmax,
+        90vmax 90vmax,
+        100vmax 100vmax,
+        90vmax 90vmax,
+        70vmax 70vmax;
+      background-position:
+        -50vmax -40vmax,
+        50vmax -30vmax,
+        20vmax 0vmax,
+        -10vmax 10vmax,
+        40vmax 60vmax;
+    }
+}
+
 .cabecera{
-    background:#29355C;
     padding: 20px 0;
     width: 100%;
     margin: 0 auto;
     text-align: center;
     font-size: 30px;
-    font-family: helvetica;
+    font-family: 'Montserrat Alternates';
     color: white;
 }
 
 main{
-    background:linear-gradient(#29355C,#626591);
     color: white;
     height: 750px;
 }
 
 #fondo{
-    background-color: #626591;
+    background-color:rgba(255, 255, 255, 0.2);
     border-radius: 30px;
     width: 80%;
     height: 65%;
     display:inline-block;
+    margin: 1px 10%;
+    position: relative;
+    border-radius: 16px;
     margin: 0 10%;
-    box-shadow: #000000;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+      0px 5px 8px 0px rgba(0, 0, 0, 0.14),
+      0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
 }
+
 
 .cajaEntrada, .cajaResultado{
     display: inline-block;
@@ -37,7 +129,7 @@ main{
     margin: 6% 7%;
     box-sizing: border-box;
     border-radius: 20px;
-    font-family: helvetica;
+    font-family: 'Montserrat Alternates';
     font-size: 30px;
 }
 
@@ -45,7 +137,7 @@ main{
     border-radius: 10px;
     box-shadow: 14px;
     font-size: 18px;
-    font-family: helvetica;
+    font-family: 'Montserrat Alternates';
     height: 216px;
     width: 280px;
     margin: 5px auto;
@@ -55,12 +147,12 @@ main{
 .btn{
     border-radius: 25px;
     text-align: center;
-    font-family: helvetica;
+    font-family: 'Montserrat Alternates';
     font-size: 18px;
     width: 150px;
     height: 50px;
     margin: 10px auto;
-    background: #29355C;
+    background: rgb(176, 86, 151);
     color: #ffffff;
 
 }
@@ -77,9 +169,8 @@ main{
 
 footer{
     font-size: 30px;
-    font-family: helvetica;
+    font-family: 'Montserrat Alternates';
     text-align: center;
     color: white;
     padding: 5px;
-    background: #626591;
 }

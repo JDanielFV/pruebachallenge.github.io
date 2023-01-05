@@ -16,12 +16,8 @@ let y; //indice para recorrer vector desencriptador
 
 //funcion que copia el texto
 function copytext(t){
-t.preventDefault()
-//console.log("copiando");
-let content = document.getElementById("#textoSalida");
-    content.select();
-    let successful = document.execCommand('copy');
-    //console.log("esto fue lo que se copio:"+content)
+    navigator.clipboard.writeText("#textoSalida")
+    alert("copiado")
 }
 
 //funcion que encripta usando array 
