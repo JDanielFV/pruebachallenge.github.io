@@ -70,6 +70,7 @@ function validando(e){
     respuesta.textContent=`${texto_nuevo}`;
 }
 
+
 // funcion que desencripta la frase encriptada aqui se usa el metodo replace en cadenas
 function validando2(x){
     x.preventDefault();
