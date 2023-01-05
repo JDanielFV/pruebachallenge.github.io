@@ -7,15 +7,15 @@ const btnCopiar = document.querySelector("#botonCopiar");
 
 
 function Encriptar(){
-var mensaje = inputMensaje.value;
-var mensajeEncriptado = mensaje
+    var mensaje = inputMensaje.value;
+    var mensajeEncriptado = mensaje
 
-.replaceAll("e","enter")
-.replaceAll("i","imes")
-.replaceAll("o","ober")
-.replaceAll("a","ai")
-.replaceAll("u","ufat");
-inputResultado.value = mensajeEncriptado;
+    .replaceAll("e","enter")
+    .replaceAll("i","imes")
+    .replaceAll("o","ober")
+    .replaceAll("a","ai")
+    .replaceAll("u","ufat");
+    inputResultado.value = mensajeEncriptado;
 }
 
 function Desencriptar(){
